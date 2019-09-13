@@ -1,0 +1,7 @@
+# This all needs to be condensed to one line before searching.
+
+-in:chats before:2013/3/6
+-from:(me OR ricks.rebecca@gmail.com OR rgray88@gmail.com OR heidielysehodges@gmail.com OR charles.terry3@gmail.com OR hannah.w.hogan@gmail.com OR rebecca.gray@gatech.edu OR camerondavidjones@gmail.com OR carolinemellard@gmail.com)
+has:nouserlabels
+-is:starred
+-is:chat
