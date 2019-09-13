@@ -1,0 +1,6 @@
+# Set default command line editor to vim if it is installed.
+if hash vim 2>/dev/null; then
+	export VISUAL=vim
+	export EDITOR="$VISUAL"
+fi
+
