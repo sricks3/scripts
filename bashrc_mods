@@ -5,4 +5,6 @@ if hash vim 2>/dev/null; then
 fi
 
 # Add some safety prompts to potentially dangerous commands.
-alias cp="cp -i"
+alias cp="cp -i"  # Ask before copying over an existing file.
+alias mv="mv -ib" # Ask before overwriting, and make a backup.
+alias rm="rm -i"  # Ask before deleting.
