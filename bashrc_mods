@@ -4,3 +4,5 @@ if hash vim 2>/dev/null; then
 	export EDITOR="$VISUAL"
 fi
 
+# Add some safety prompts to potentially dangerous commands.
+alias cp="cp -i"
