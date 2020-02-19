@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# Attempt to determine what package manager is used on this system.
-if [[ -e $(which apt) ]]; then
-  pm=apt
-elif [[ -e $(which pacman) ]]; then
-  pm=pacman
-elif [[ -e $(which dnf) ]]; then
-  pm=dnf
-elif [[ -e $(which yum) ]]; then
-  pm=yum
-elif [[ -e $(which yay) ]]; then
-  pm=yay
-fi
+# Define array of all package managers
+all_pms=(apt yum dnf packman yay brew)
 
-echo $pm
+# Declare array to hold package managers installed on this system
+declare -a these_pms
+# Fill array of package managers installed on this system
+for i in "${all_pms[@]}"
+do
+  if [[ -e $(which $i) ]]
+  then
+    these_pms+=($i)
+  fi
+done
+
+echo ${these_pms[*]}
