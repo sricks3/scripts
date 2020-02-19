@@ -58,7 +58,21 @@ do
       echo yay $no_support
       ;;
     brew)
-      echo brew $no_support
+      echo /----------------------------------\\
+      echo \| Updating brew formulae and casks \|
+      echo \\----------------------------------/
+      brew update
+      echo /------------------------------\\
+      echo \| Upgrading formulae and casks \|
+      echo \\------------------------------/
+      brew upgrade
+      echo /--------------------------------------------\\
+      echo \| Finished upgrading brew formulae and casks \|
+      echo \|                                            \|
+      echo \| To make sure that your whole system is up  \|
+      echo \| to date, open App Store and update any     \|
+      echo \| software installed from Apple\'s repos.     \|
+      echo \\--------------------------------------------/
       ;;
     snap)
       echo /------------------------\\
