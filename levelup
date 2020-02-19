@@ -4,7 +4,7 @@
 all_pms=(apt yum dnf pacman yay brew snap flatpack)
 
 # Let the user know which package managers are listed.
-echo This script supports the following package managers:
+echo This script intends to support the following package managers:
 echo ${all_pms[*]}
 
 # Declare array to hold package managers installed on this system
