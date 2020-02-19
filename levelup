@@ -64,7 +64,7 @@ do
       echo /------------------------\\
       echo \| Updating snap packages \|
       echo \\------------------------/
-      snap refresh --color
+      snap refresh --color=auto
       echo /---------------------------------\\
       echo \| Finished updating snap packages \|
       echo \\---------------------------------/
