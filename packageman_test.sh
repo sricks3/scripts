@@ -14,4 +14,15 @@ do
   fi
 done
 
-echo ${these_pms[*]}
+# Pick which package manager to use
+###############################################################################
+# TODO: MAKE THIS ASK FOR USER INPUT IF MULTIPLE PMS ARE INSTALLED
+###############################################################################
+if [[ ${#these_pms[@]} < 1 ]]
+then
+  use_pm="unknown"
+else
+  use_pm=${these_pms[0]}
+fi
+
+echo $use_pm
