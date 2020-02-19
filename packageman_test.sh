@@ -52,5 +52,7 @@ do
     flatpack)
       echo flatpack $no_support
       ;;
+    *)
+      echo Hm, it looks like you don't have a supported package manager installed.
   esac
 done
