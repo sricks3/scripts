@@ -26,3 +26,10 @@ else
 fi
 
 echo $use_pm
+
+###############################################################################
+# TODO: Run a full system upgrade using the chosen package manager
+# ALTERNATIVELY: Allow the user to choose all installed package managers. (This
+# will possibly provide a better experience if using things like snap or
+# flatpack in addition to the system default package manager.)
+###############################################################################
