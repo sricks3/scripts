@@ -29,7 +29,21 @@ for i in "${these_pms[@]}"
 do
   case $i in
     apt)
-      sudo apt update && sudo apt full-upgrade && sudo apt autoremove
+      echo /---------------------------\\
+      echo \| Updating apt repositories \|
+      echo \\---------------------------/
+      sudo apt update
+      echo /------------------------\\
+      echo \| Upgrading apt packages \|
+      echo \\------------------------/
+      sudo apt full-upgrade
+      echo /-----------------------------------\\
+      echo \| Removing unnecessary apt packages \|
+      echo \\-----------------------------------/
+      sudo apt autoremove
+      echo /-------------------\\
+      echo \| Done updating apt \|
+      echo \\-------------------/
       ;;
     yum)
       echo yum $no_support
@@ -47,7 +61,10 @@ do
       echo brew $no_support
       ;;
     snap)
-      snap refresh
+      echo /------------------------\\
+      echo \| Updating snap packages \|
+      echo \\------------------------/
+      snap refresh --color
       ;;
     flatpack)
       echo flatpack $no_support
