@@ -30,19 +30,19 @@ do
   case $i in
     apt)
       echo /---------------------------\\
-      echo \| Updating apt repositories \|
+      echo \| Updating apt repositories
       echo \\---------------------------/
       sudo apt update
       echo /------------------------\\
-      echo \| Upgrading apt packages \|
+      echo \| Upgrading apt packages
       echo \\------------------------/
       sudo apt full-upgrade
       echo /-----------------------------------\\
-      echo \| Removing unnecessary apt packages \|
+      echo \| Removing unnecessary apt packages
       echo \\-----------------------------------/
       sudo apt autoremove
       echo /-----------------------\\
-      echo \| Finished updating apt \|
+      echo \| Finished updating apt
       echo \\-----------------------/
       ;;
     yum)
@@ -59,31 +59,31 @@ do
       ;;
     brew)
       echo /----------------------------------\\
-      echo \| Updating brew formulae and casks \|
+      echo \| Updating brew formulae and casks
       echo \\----------------------------------/
       brew update
       echo /------------------------------\\
-      echo \| Upgrading formulae and casks \|
+      echo \| Upgrading formulae and casks
       echo \\------------------------------/
       brew upgrade
       echo /--------------------------------------------\\
-      echo \| Finished upgrading brew formulae and casks \|
-      echo \|                                            \|
-      echo \| To make sure that your whole system is up  \|
-      echo \| to date, open App Store and update any     \|
-      echo \| software installed from Apple\'s repos.     \|
+      echo \| Finished upgrading brew formulae and casks
+      echo \|
+      echo \| To make sure that your whole system is up
+      echo \| to date, open App Store and update any
+      echo \| software installed from Apple\'s repos.
       echo \\--------------------------------------------/
       ;;
     port)
-      echo MacPorts (port) $no_support
+      echo MacPorts \(port\) $no_support
       ;;
     snap)
       echo /------------------------\\
-      echo \| Updating snap packages \|
+      echo \| Updating snap packages
       echo \\------------------------/
       snap refresh --color=auto
       echo /---------------------------------\\
-      echo \| Finished updating snap packages \|
+      echo \| Finished updating snap packages
       echo \\---------------------------------/
       ;;
     flatpack)
