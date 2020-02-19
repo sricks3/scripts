@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define array of all package managers
-all_pms=(apt yum dnf pacman yay brew snap flatpack)
+all_pms=(apt yum dnf pacman yay brew port snap flatpack)
 
 # Let the user know which package managers are listed.
 echo This script intends to support the following package managers:
@@ -73,6 +73,9 @@ do
       echo \| to date, open App Store and update any     \|
       echo \| software installed from Apple\'s repos.     \|
       echo \\--------------------------------------------/
+      ;;
+    port)
+      echo MacPorts (port) $no_support
       ;;
     snap)
       echo /------------------------\\
