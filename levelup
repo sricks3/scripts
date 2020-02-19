@@ -47,7 +47,7 @@ do
       echo brew $no_support
       ;;
     snap)
-      echo snap $no_support
+      snap refresh
       ;;
     flatpack)
       echo flatpack $no_support
