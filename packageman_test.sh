@@ -27,7 +27,7 @@ done
 no_support="is not yet supported by this script."
 for i in "${these_pms[@]}"
 do
-  case i in
+  case $i in
     apt)
       sudo apt update && sudo apt full-upgrade && sudo apt autoremove
       ;;
