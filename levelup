@@ -1,20 +1,38 @@
 #!/bin/bash
 
+###############################################################################
+#
+# IMPORTANT:
+# This script assumes that if yay is installed, pacman is also installed!
+#
+###############################################################################
+
+
 # Define array of all package managers
 all_pms=(apt yum dnf pacman yay brew port snap flatpack)
 
 # Let the user know which package managers are listed.
 echo This script intends to support the following package managers:
 echo ${all_pms[*]}
+echo
 
 # Declare array to hold package managers installed on this system
 declare -a these_pms
+# Set a variable telling us if yay is installed (for use in the case switch)
+haveyay=false
 # Fill array of package managers installed on this system
+# NOTE: The presence of yay will be held in $haveyay, not in $these_pms.
 for i in "${all_pms[@]}"
 do
-  if [[ -e $(which $i) ]]
+  if which $i &> /dev/null
   then
-    these_pms+=($i)
+    #these_pms+=($i)
+    if [ $i = yay ]
+    then
+      haveyay=true
+    else
+      these_pms+=($i)
+    fi
   fi
 done
 
@@ -45,17 +63,30 @@ do
       echo \| Finished updating apt
       echo \\-----------------------/
       ;;
-    yum)
-      echo yum $no_support
-      ;;
-    dnf)
-      echo dnf $no_support
-      ;;
-    pacman)
-      echo pacman $no_support
-      ;;
-    yay)
-      echo yay $no_support
+    pacman) # If yay installed, it is used instead of pacman
+      if [[ $haveyay=true ]];
+      then
+        echo /-------------------------------------------------\\
+        echo \| Found pacman, but yay is also installed.
+        echo \| Using yay...
+        echo \|
+        echo \| Upgrading all packages including those from AUR
+        echo \\-------------------------------------------------/
+        yay -Syyu
+        echo /-----------------------\\
+        echo \| Finished updating yay
+        echo \\-----------------------/
+      else
+        echo /------------------------\\
+        echo \| Found pacman
+        echo \|
+        echo \| Upgrading all packages
+        echo \\------------------------/
+        pacman -Syyu
+        echo /--------------------------\\
+        echo \| Finished updating pacman
+        echo \---------------------------/
+      fi
       ;;
     brew)
       echo /----------------------------------\\
@@ -74,9 +105,6 @@ do
       echo \| software installed from Apple\'s repos.
       echo \\--------------------------------------------/
       ;;
-    port)
-      echo MacPorts \(port\) $no_support
-      ;;
     snap)
       echo /------------------------\\
       echo \| Updating snap packages
@@ -86,11 +114,8 @@ do
       echo \| Finished updating snap packages
       echo \\---------------------------------/
       ;;
-    flatpack)
-      echo flatpack $no_support
-      ;;
     *)
-      echo Hm, it looks like you don\'t have a supported package manager installed.
+      echo $i is not yet supported by this script.
       ;;
   esac
 done
