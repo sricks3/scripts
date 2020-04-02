@@ -48,6 +48,8 @@ do
   case $i in
     apt)
       echo /---------------------------\\
+      echo \| Found apt
+      echo \|
       echo \| Updating apt repositories
       echo \\---------------------------/
       sudo apt update
@@ -90,6 +92,8 @@ do
       ;;
     brew)
       echo /----------------------------------\\
+      echo \| Found brew
+      echo \|
       echo \| Updating brew formulae and casks
       echo \\----------------------------------/
       brew update
@@ -107,6 +111,8 @@ do
       ;;
     snap)
       echo /------------------------\\
+      echo \| Found snap
+      echo \|
       echo \| Updating snap packages
       echo \\------------------------/
       snap refresh --color=auto
