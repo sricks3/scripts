@@ -121,7 +121,7 @@ do
       echo \\---------------------------------/
       ;;
     *)
-      echo $i is not yet supported by this script.
+      echo Found $i, but it is not yet supported by this script.
       ;;
   esac
 done
