@@ -31,7 +31,7 @@ do
     then
       haveyay=true
     else
-      these_pms+=($i)
+      these_pms+=("$i")
     fi
   fi
 done
