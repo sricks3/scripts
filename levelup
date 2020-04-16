@@ -65,7 +65,7 @@ do
       echo \\-----------------------/
       ;;
     pacman) # If yay installed, it is used instead of pacman
-      if [[ $haveyay=true ]];
+      if [[ $haveyay = true ]];
       then
         echo /-------------------------------------------------\\
         echo \| Found pacman, but yay is also installed.
