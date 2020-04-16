@@ -27,7 +27,7 @@ do
   if which $i &> /dev/null
   then
     #these_pms+=($i)
-    if [ $i = yay ]
+    if [ $i=yay ]
     then
       haveyay=true
     else
