@@ -42,7 +42,6 @@ done
 # ALTERNATIVELY: If there is more than one package manager installed, allow the
 # user to choose which one(s) to use.
 ###############################################################################
-no_support="is not yet supported by this script."
 for i in "${these_pms[@]}"
 do
   case $i in
