@@ -2,6 +2,10 @@
 
 cd ~/git/obsidian
 
+git fetch
+
+git pull
+
 git add -A
 
 git commit -m "update"
