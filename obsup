@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/git/obsidian
+cd ~/workspaces/obsidian
 
 git fetch
 
